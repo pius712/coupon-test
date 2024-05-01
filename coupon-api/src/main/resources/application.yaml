@@ -35,4 +35,4 @@ logging:
 
 
 coupon:
-  topic: coupon.requested
+  topic: coupon_requested

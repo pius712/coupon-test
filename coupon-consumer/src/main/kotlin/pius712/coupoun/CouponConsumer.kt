@@ -1,15 +1,18 @@
 package pius712.coupoun
 
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.stereotype.Component
+import pius712.storage.db.CouponEntity
+import pius712.storage.db.CouponRepository
 
 
 @Component
-class CouponConsumer {
+class CouponConsumer(
+    private val couponRepository: CouponRepository
+) {
 
-    @KafkaListener(topics = ["coupon-requested"], groupId = "group_1")
-    fun listen(message:String) {
-        println("listen ${message}");
+    @KafkaListener(topics = ["coupon_create"], groupId = "group_1")
+    fun listen(userId:Long) {
+        couponRepository.save(CouponEntity(userId = userId))
     }
 }

@@ -1,12 +1,11 @@
-package pius712.coupoun.storage.db
+package pius712.storage.db
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
+import jakarta.persistence.Table
 
 @Entity
+@Table(name="coupon_v2")
 data class CouponEntity(
-    @Column
-    val name: String,
-    @Column(name="ref_user_id")
     val userId:Long
 ): BaseEntity(){ }

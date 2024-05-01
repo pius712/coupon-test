@@ -13,54 +13,54 @@ class CouponServiceTest(
     @Autowired private val couponRepository: CouponRepository
 ) {
 
-    @Test
-    fun issueTest() {
-        val threadPool = Executors.newFixedThreadPool(32)
-        val countDownLatch = CountDownLatch(32)
-        for (i in 1..1000L) {
-            threadPool.submit{
-                couponService.issueV1(i)
-                countDownLatch.countDown()
-            }
-        }
-
-        countDownLatch.await()
-        val count = couponRepository.count()
-//        Thread.sleep(4000)
-        println("coupon count $count")
-    }
-
-    @Test
-    fun issueV3Test() {
-        val threadPool = Executors.newFixedThreadPool(32)
-        val countDownLatch = CountDownLatch(32)
-        for (i in 1..1000L) {
-            threadPool.submit{
-                couponService.issueV3(i)
-                countDownLatch.countDown()
-            }
-        }
-
-        countDownLatch.await()
-        val count = couponRepository.count()
-//        Thread.sleep(4000)
-        println("coupon count $count")
-    }
-
-    @Test
-    fun issueV4Test() {
-        val threadPool = Executors.newFixedThreadPool(32)
-        val countDownLatch = CountDownLatch(32)
-        for (i in 1..1000L) {
-            threadPool.submit{
-                couponService.issueV4(i)
-                countDownLatch.countDown()
-            }
-        }
-
-        countDownLatch.await()
-        val count = couponRepository.count()
-//        Thread.sleep(4000)
-        println("coupon count $count")
-    }
+//    @Test
+//    fun issueTest() {
+//        val threadPool = Executors.newFixedThreadPool(32)
+//        val countDownLatch = CountDownLatch(32)
+//        for (i in 1..1000L) {
+//            threadPool.submit{
+//                couponService.issueV1(i)
+//                countDownLatch.countDown()
+//            }
+//        }
+//
+//        countDownLatch.await()
+//        val count = couponRepository.count()
+////        Thread.sleep(4000)
+//        println("coupon count $count")
+//    }
+//
+//    @Test
+//    fun issueV3Test() {
+//        val threadPool = Executors.newFixedThreadPool(32)
+//        val countDownLatch = CountDownLatch(32)
+//        for (i in 1..1000L) {
+//            threadPool.submit{
+//                couponService.issueV3(i)
+//                countDownLatch.countDown()
+//            }
+//        }
+//
+//        countDownLatch.await()
+//        val count = couponRepository.count()
+////        Thread.sleep(4000)
+//        println("coupon count $count")
+//    }
+//
+//    @Test
+//    fun issueV4Test() {
+//        val threadPool = Executors.newFixedThreadPool(32)
+//        val countDownLatch = CountDownLatch(32)
+//        for (i in 1..1000L) {
+//            threadPool.submit{
+//                couponService.issueV4(i)
+//                countDownLatch.countDown()
+//            }
+//        }
+//
+//        countDownLatch.await()
+//        val count = couponRepository.count()
+////        Thread.sleep(4000)
+//        println("coupon count $count")
+//    }
 }

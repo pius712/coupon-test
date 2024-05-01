@@ -10,21 +10,21 @@ import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.kafka.core.ProducerFactory
 
 
-@Configuration
-class CouponIssueKafkaConfig(
-) {
+//@Configuration
+//class CouponIssueKafkaConfig(
+//) {
 
-    @Bean
-    fun producerConfig():ProducerFactory<String, Long> {
-        val config = HashMap<String,Any>()
-        config[ProducerConfig.BOOTSTRAP_SERVERS_CONFIG] = "localhost:29092"
-        config[ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG] = StringSerializer::class.java
-        config[ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG] = StringSerializer::class.java
-        return DefaultKafkaProducerFactory(config)
-    }
+//    @Bean
+//    fun producerConfig():ProducerFactory<String, Long> {
+//        val config = HashMap<String,Any>()
+//        config[ProducerConfig.BOOTSTRAP_SERVERS_CONFIG] = "localhost:29092"
+//        config[ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG] = StringSerializer::class.java
+//        config[ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG] = StringSerializer::class.java
+//        return DefaultKafkaProducerFactory(config)
+//    }
 
-    @Bean
-    fun KafkaTemplate(): KafkaTemplate<String, Long>{
-        return KafkaTemplate(producerConfig())
-    }
-}
+//    @Bean
+//    fun KafkaTemplate(): KafkaTemplate<String, Long>{
+//        return KafkaTemplate(producerConfig())
+//    }
+//}

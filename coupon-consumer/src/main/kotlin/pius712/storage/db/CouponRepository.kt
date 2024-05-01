@@ -1,4 +1,4 @@
-package pius712.coupoun.storage.db
+package pius712.storage.db
 
 import org.springframework.data.jpa.repository.JpaRepository
 
